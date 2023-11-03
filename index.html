@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        background-color: #0f0f0f;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        font-size: 2em;
+        color: #f0f0f0;
+      }
+      
+      .color {
+        display: inline-block;
+        padding: 0 0.25em;
+        color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <h1>
+      <span class="color" id="width"></span>
+      x
+      <span class="color" id="height"></span>
+    </h1>
+    </div>
+    <script>
+      function updateWindowSize() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const pw = document.getElementById("width");
+        const ph = document.getElementById("height");
+        pw.textContent = w;
+        ph.textContent = h;
+      }
+      updateWindowSize();
+      window.addEventListener("resize", updateWindowSize);
+    </script>
+  </body>
+</html>
